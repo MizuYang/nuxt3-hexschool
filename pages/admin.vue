@@ -1,9 +1,12 @@
 <script setup>
+definePageMeta({
+  layout: 'main-layout'
+})
 
 </script>
 
 <template>
-最外層首頁
+  <NuxtPage />
 </template>
 
 <style lang='scss' scope></style>

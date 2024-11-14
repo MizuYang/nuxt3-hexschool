@@ -12,6 +12,7 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "nuxt": "^3.14.159",
+    "puppeteer": "^23.8.0",
     "vue": "latest",
     "vue-router": "latest"
   },
