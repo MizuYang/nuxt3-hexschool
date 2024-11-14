@@ -19,5 +19,15 @@ export default defineNuxtConfig({
         },
       },
     },
-  }
+  },
+
+  // "components": {
+  //   "dirs": [
+  //     {
+  //       path: '@/components/global', // 可被 auto import 的資料夾
+  //       global: true
+  //     },
+  //     "@/components",  // 區域註冊
+  //   ]
+  // }
 })
