@@ -8,6 +8,17 @@ export default defineNuxtConfig({
     '@/assets/style/modules/_bootstrap.scss'
   ],
 
+  // "components": {
+  //   "dirs": [
+  //     {
+  //       path: '@/components/global', // 可被 auto import 的資料夾
+  //       // global: true
+  //       // global: false
+  //     },
+  //     // "@/components/global",  // 區域註冊
+  //   ]
+  // }
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -21,20 +32,12 @@ export default defineNuxtConfig({
     },
   },
 
+  // auto import 的資料夾
+  "imports": {
+    "dirs": [
+      'stores'
+    ]
+  },
 
-  // components: {
-  //   global: true,
-  //   dirs: ['~/components']
-  // },
-
-  // "components": {
-  //   "dirs": [
-  //     {
-  //       path: '@/components/global', // 可被 auto import 的資料夾
-  //       // global: true
-  //       // global: false
-  //     },
-  //     // "@/components/global",  // 區域註冊
-  //   ]
-  // }
+  modules: ["@pinia/nuxt"]
 })
