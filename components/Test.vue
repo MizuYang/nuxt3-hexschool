@@ -3,7 +3,7 @@
 </script>
 
 <template>
-123
+  <div>Test</div>
 </template>
 
 <style lang='scss' scope></style>

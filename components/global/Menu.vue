@@ -1,1 +1,5 @@
-<template>123</template>
+<template>
+  <span>
+    選單
+  </span>
+</template>
