@@ -84,12 +84,12 @@ function refreshData() {
 </script>
 
 <template>
-  後臺首頁，使用主要 layout <br />
-
-  <button type="button" @click="refresh">refresh</button>
-  <button type="button" @click="refreshData">refreshData</button>
-
-  {{ data }}
+  <div>
+    後臺首頁，使用主要 layout <br />
+    <button type="button" @click="refresh">refresh</button>
+    <button type="button" @click="refreshData">refreshData</button>
+    {{ data }}
+  </div>
 </template>
 
 <style lang='scss' scope></style>
