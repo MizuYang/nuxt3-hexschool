@@ -5,6 +5,7 @@
 <template>
   <NuxtLink to="/">最外層首頁</NuxtLink> |
   <NuxtLink to="/front">front</NuxtLink> |
+  <NuxtLink to="/front/xxx1">front/xxx1/index</NuxtLink> |
   <NuxtLink to="/admin">admin</NuxtLink> |
   <NuxtLink to="/admin/A">adminA</NuxtLink> |
   <NuxtLink to="/admin/B">adminB</NuxtLink> |
