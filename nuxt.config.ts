@@ -10,11 +10,24 @@ export default defineNuxtConfig({
       "viewport": "width=500, initial-scale=1",
       "title": "nuxt.config SEO title",
       "meta": [
-          { "name": "description", "content": "nuxt.config SEO description" },
-          { "property": "og:title", "content": "nuxt.config SEO og:title" },
-          { "property": "og:url", "content": "nuxt.config SEO og:url" },
-          { "property": "og:description", "content": "nuxt.config SEO og:description" },
-      ]
+        { "name": "description", "content": "nuxt.config SEO description" },
+        { "property": "og:title", "content": "nuxt.config SEO og:title" },
+        { "property": "og:url", "content": "nuxt.config SEO og:url" },
+        { "property": "og:description", "content": "nuxt.config SEO og:description" },
+      ],
+      // 全域載入外部資源
+      // link: [
+      //   {
+      //     rel: "stylesheet",
+      //     href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
+      //   },
+      // ],
+      // script: [
+      //   {
+      //     src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js",
+      //     async: true,
+      //   },
+      // ],
     }
   },
 
