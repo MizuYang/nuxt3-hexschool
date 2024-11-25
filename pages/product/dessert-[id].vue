@@ -3,7 +3,7 @@ const route = useRoute();
 
 const name = decodeURIComponent(route.fullPath.split("-")[1]);
 
-// useHead
+// 1. useHead
 // useHead({
 //   // useHead 的所有屬性,可參考：https://nuxt.com/docs/api/composables/use-head#usehead
 
@@ -16,17 +16,31 @@ const name = decodeURIComponent(route.fullPath.split("-")[1]);
 //   ],
 // });
 
-// useSeoMeta server, client 都會動態更新 seo meta tag
-useSeoMeta({
-  title: `useSeoMeta-title-甜點名稱: ${name}`,
-  description: `useSeoMeta-description-甜點名稱: ${name}`,
-  ogDescription: `useSeoMeta-ogDescription-甜點名稱: ${name}`,
-  ogTitle: `useSeoMeta-ogTitle-甜點名稱: ${name}`,
-  //  ogImage: "",
-  //  twitterCard: "summary_large_image",
-  //  twitterSite: "",
-  //  twitterCreator: "",
-});
+// 2. useSeoMeta server, client 都會動態更新 seo meta tag
+// useSeoMeta({
+//   title: `useSeoMeta-title-甜點名稱: ${name}`,
+//   description: `useSeoMeta-description-甜點名稱: ${name}`,
+//   ogDescription: `useSeoMeta-ogDescription-甜點名稱: ${name}`,
+//   ogTitle: `useSeoMeta-ogTitle-甜點名稱: ${name}`,
+//   //  ogImage: "",
+//   //  twitterCard: "summary_large_image",
+//   //  twitterSite: "",
+//   //  twitterCreator: "",
+// });
+
+// 3. useServerSeoMeta  只在 server 端動態更新 seo meta tag
+// useServerSeoMeta({
+//   title: `useServerSeoMeta-title-甜點名稱: ${name}`,
+//   description: `useServerSeoMeta-description-甜點名稱: ${name}`,
+//   ogDescription: `useServerSeoMeta-ogDescription-甜點名稱: ${name}`,
+//   ogTitle: `useServerSeoMeta-ogTitle-甜點名稱: ${name}`,
+//   //  ogImage: "",
+//   //  twitterCard: "summary_large_image",
+//   //  twitterSite: "",
+//   //  twitterCreator: "",
+// });
+
+
 </script>
 
 <template>
