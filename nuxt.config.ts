@@ -4,7 +4,18 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: 'page', mode: 'out-in' },
+
+    "head": {
+      "viewport": "width=500, initial-scale=1",
+      "title": "nuxt.config SEO title",
+      "meta": [
+          { "name": "description", "content": "nuxt.config SEO description" },
+          { "property": "og:title", "content": "nuxt.config SEO og:title" },
+          { "property": "og:url", "content": "nuxt.config SEO og:url" },
+          { "property": "og:description", "content": "nuxt.config SEO og:description" },
+      ]
+    }
   },
 
   // 全域的樣式
