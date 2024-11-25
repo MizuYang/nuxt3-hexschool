@@ -58,7 +58,14 @@ const name = decodeURIComponent(route.fullPath.split("-")[1]);
 </script>
 
 <template>
-  <div>甜點名稱：{{ name }}</div>
+  <div>
+    <!-- <Head>
+      <Title>使用 meta tag 組件: {{ name }}</Title>
+      <Meta name="description" :content="`使用 meta tag 組件: ${name}`" />
+    </Head> -->
+
+    甜點名稱：{{ name }}
+  </div>
 </template>
 
 <style lang='scss' scope></style>
