@@ -27,34 +27,56 @@ const { isLoading } = storeToRefs(loadingStore)
 <template>
   <div>
     <h1>最外層首頁</h1>
-    <h2>composables</h2>
-    {{ count }}
 
-    <button type="button" @click="increment">增加</button>
-    <button type="button" @click="decrement">減少</button>
+    <!-- NuxtLink -->
+    <div>
+      <h2>NuxtLink</h2>
+      <!-- _self（預設）：在當前瀏覽器視窗打開連結。 -->
+      <NuxtLink to="/admin" target="_self">target="在當前瀏覽器視窗打開連結。: _self"</NuxtLink>
+      <br />
+      
+      <!-- _blank：在新頁籤打開連結。 -->
+      <NuxtLink to="/admin" target="在新頁籤打開連結。: _blank">target="_blank"：在新頁籤打開連結。</NuxtLink>
+      <br />
+      
+      <!-- _parent：在上一層父層視窗打開連結。 -->
+      <NuxtLink to="/admin" target="_parent">在上一層父層視窗打開連結。: target="_parent"</NuxtLink>
+      <br />
+      
+      <!-- _top：在最頂層父層視窗打開連結。 -->
+      <NuxtLink to="/admin" target="_top">在最頂層父層視窗打開連結。: target="_top"</NuxtLink>
+    </div>
+    
 
-    <br />
 
-    <h2>stores</h2>
-    {{ userName }}
+    <!-- composables -->
+    <div>
+      <h2>composables</h2>
+      {{ count }}
+      <button type="button" @click="increment">增加</button>
+      <button type="button" @click="decrement">減少</button>
+    </div>
 
-    <button type="button" @click="reverseName">名字翻轉</button>
-
-
-    <div class="container">
-      <h1>最新消息</h1>
-      <!-- <NewsCard v-for="..." :key="..."  v-bind="..." /> -->
-      <template v-for="news in newsList" :key="news._id">
-        <NewsCard :_id="news._id"
-                  :title="news.title"
-                  :image="news.image"
-                  :description="news.description"
-                  :createdAt="news.createdAt"
-                  :updatedAt="news.updatedAt" />
-      </template>
-      <ClientOnly>
-        <Loading v-model:active="isLoading" />
-      </ClientOnly>
+    <!-- stores -->
+    <div>
+      <h2>stores</h2>
+      {{ userName }}
+      <button type="button" @click="reverseName">名字翻轉</button>
+      <div class="container">
+        <h1>最新消息</h1>
+        <!-- <NewsCard v-for="..." :key="..."  v-bind="..." /> -->
+        <template v-for="news in newsList" :key="news._id">
+          <NewsCard :_id="news._id"
+                    :title="news.title"
+                    :image="news.image"
+                    :description="news.description"
+                    :createdAt="news.createdAt"
+                    :updatedAt="news.updatedAt" />
+        </template>
+        <ClientOnly>
+          <Loading v-model:active="isLoading" />
+        </ClientOnly>
+      </div>
     </div>
 
 
