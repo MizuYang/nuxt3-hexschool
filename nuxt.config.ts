@@ -6,29 +6,29 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
 
-    "head": {
-      "viewport": "width=500, initial-scale=1",
-      "title": "nuxt.config SEO title",
-      "meta": [
-        { "name": "description", "content": "nuxt.config SEO description" },
-        { "property": "og:title", "content": "nuxt.config SEO og:title" },
-        { "property": "og:url", "content": "nuxt.config SEO og:url" },
-        { "property": "og:description", "content": "nuxt.config SEO og:description" },
-      ],
-      // 全域載入外部資源
-      // link: [
-      //   {
-      //     rel: "stylesheet",
-      //     href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
-      //   },
-      // ],
-      // script: [
-      //   {
-      //     src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js",
-      //     async: true,
-      //   },
-      // ],
-    }
+    // "head": {
+    //   "viewport": "width=500, initial-scale=1",
+    //   "title": "nuxt.config SEO title",
+    //   "meta": [
+    //     { "name": "description", "content": "nuxt.config SEO description" },
+    //     { "property": "og:title", "content": "nuxt.config SEO og:title" },
+    //     { "property": "og:url", "content": "nuxt.config SEO og:url" },
+    //     { "property": "og:description", "content": "nuxt.config SEO og:description" },
+    //   ],
+    //   // 全域載入外部資源
+    //   // link: [
+    //   //   {
+    //   //     rel: "stylesheet",
+    //   //     href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
+    //   //   },
+    //   // ],
+    //   // script: [
+    //   //   {
+    //   //     src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js",
+    //   //     async: true,
+    //   //   },
+    //   // ],
+    // }
   },
 
   // 全域的樣式
@@ -58,6 +58,18 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+
+  // 環境變數
+  runtimeConfig: {
+    // 只能被 server 端讀取的環境變數
+    SUPER_SAFE_TEXT: '只有伺服器端才可讀取',
+
+
+    // 可被 client, server 端讀取的環境變數
+    public: {
+      SUPER_TEXT: '客戶端、伺服器端皆可讀取'
+    }
   },
 
   // auto import 的資料夾

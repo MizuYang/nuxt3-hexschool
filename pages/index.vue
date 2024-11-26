@@ -22,7 +22,21 @@ const { reverseName } = userStore
 const loadingStore = useLoadingStore()
 const { isLoading } = storeToRefs(loadingStore)
 
-function changeLayout (lauoytName) {
+// 環境變數
+// const runtimeConfig = useRuntimeConfig()
+// //  console.log('runtimeConfig: ', runtimeConfig)
+// if (process.server) {
+//   // 只有伺服器端才能被讀取
+//   console.log('1只有伺服器端才能被讀取: ', runtimeConfig.SUPER_SAFE_TEXT)
+// }
+// if (process.client) {
+//   console.log('2只有客戶端能被讀取: ', runtimeConfig.public.SUPER_TEXT)
+// }
+// // 客戶端和伺服器端都能被讀取
+// console.log('3客戶端和伺服器端都能被讀取: ', runtimeConfig.public.SUPER_TEXT)
+
+
+function changeLayout(lauoytName) {
   setPageLayout(lauoytName)
 }
 </script>
@@ -32,10 +46,10 @@ function changeLayout (lauoytName) {
     <h1>最外層首頁</h1>
 
     <!-- 動態切換 layout -->
-     <div>
+    <div>
       <button type="button" @click="changeLayout('default')">切換默認 layout</button>
       <button type="button" @click="changeLayout('main-layout')">切換主要 layout</button>
-     </div>
+    </div>
 
 
     <!-- NuxtLink -->
