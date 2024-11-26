@@ -22,11 +22,21 @@ const { reverseName } = userStore
 const loadingStore = useLoadingStore()
 const { isLoading } = storeToRefs(loadingStore)
 
+function changeLayout (lauoytName) {
+  setPageLayout(lauoytName)
+}
 </script>
 
 <template>
   <div>
     <h1>最外層首頁</h1>
+
+    <!-- 動態切換 layout -->
+     <div>
+      <button type="button" @click="changeLayout('default')">切換默認 layout</button>
+      <button type="button" @click="changeLayout('main-layout')">切換主要 layout</button>
+     </div>
+
 
     <!-- NuxtLink -->
     <div>
@@ -34,19 +44,19 @@ const { isLoading } = storeToRefs(loadingStore)
       <!-- _self（預設）：在當前瀏覽器視窗打開連結。 -->
       <NuxtLink to="/admin" target="_self">target="在當前瀏覽器視窗打開連結。: _self"</NuxtLink>
       <br />
-      
+
       <!-- _blank：在新頁籤打開連結。 -->
       <NuxtLink to="/admin" target="在新頁籤打開連結。: _blank">target="_blank"：在新頁籤打開連結。</NuxtLink>
       <br />
-      
+
       <!-- _parent：在上一層父層視窗打開連結。 -->
       <NuxtLink to="/admin" target="_parent">在上一層父層視窗打開連結。: target="_parent"</NuxtLink>
       <br />
-      
+
       <!-- _top：在最頂層父層視窗打開連結。 -->
       <NuxtLink to="/admin" target="_top">在最頂層父層視窗打開連結。: target="_top"</NuxtLink>
     </div>
-    
+
 
 
     <!-- composables -->
@@ -66,12 +76,8 @@ const { isLoading } = storeToRefs(loadingStore)
         <h1>最新消息</h1>
         <!-- <NewsCard v-for="..." :key="..."  v-bind="..." /> -->
         <template v-for="news in newsList" :key="news._id">
-          <NewsCard :_id="news._id"
-                    :title="news.title"
-                    :image="news.image"
-                    :description="news.description"
-                    :createdAt="news.createdAt"
-                    :updatedAt="news.updatedAt" />
+          <NewsCard :_id="news._id" :title="news.title" :image="news.image" :description="news.description"
+            :createdAt="news.createdAt" :updatedAt="news.updatedAt" />
         </template>
         <ClientOnly>
           <Loading v-model:active="isLoading" />
