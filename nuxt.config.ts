@@ -58,6 +58,10 @@ export default defineNuxtConfig({
         },
       },
     },
+    "define": {
+      // 用 process.env 來使用環境變數
+      "process.env": process.env,
+    },
   },
 
   // 環境變數
@@ -65,8 +69,8 @@ export default defineNuxtConfig({
     // 只能被 server 端讀取的環境變數
     // superSafeText: '只有伺服器端才可讀取',
     // safeName: '',
-    
-    
+
+
     // 可被 client, server 端讀取的環境變數
     // public: {
     //   superText: '客戶端、伺服器端皆可讀取',

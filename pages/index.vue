@@ -45,6 +45,10 @@ const { isLoading } = storeToRefs(loadingStore)
 //   console.log('2只有客戶端能被讀取: ', runtimeConfig.public.mizuName)
 // }
 
+// 3. 使用 vite define env 定義環境變數
+// console.log(process.env.NUXT_SAFE_NAME)
+// console.log(process.env.NUXT_PUBLIC_MIZU_NAME)
+
 
 function changeLayout(lauoytName) {
   setPageLayout(lauoytName)
