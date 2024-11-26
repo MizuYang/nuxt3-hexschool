@@ -23,17 +23,27 @@ const loadingStore = useLoadingStore()
 const { isLoading } = storeToRefs(loadingStore)
 
 // 環境變數
+// 1. 在 runtimeConfig 定義環境變數
 // const runtimeConfig = useRuntimeConfig()
 // //  console.log('runtimeConfig: ', runtimeConfig)
 // if (process.server) {
 //   // 只有伺服器端才能被讀取
-//   console.log('1只有伺服器端才能被讀取: ', runtimeConfig.SUPER_SAFE_TEXT)
+//   console.log('1只有伺服器端才能被讀取: ', runtimeConfig.superSafeText)
 // }
 // if (process.client) {
-//   console.log('2只有客戶端能被讀取: ', runtimeConfig.public.SUPER_TEXT)
+//   console.log('2只有客戶端能被讀取: ', runtimeConfig.public.superText)
 // }
 // // 客戶端和伺服器端都能被讀取
-// console.log('3客戶端和伺服器端都能被讀取: ', runtimeConfig.public.SUPER_TEXT)
+// console.log('3客戶端和伺服器端都能被讀取: ', runtimeConfig.public.superText)
+
+// 2. 使用 .env 定義環境變數
+// if (process.server) {
+//   // 只有伺服器端才能被讀取
+//   console.log('1只有伺服器端才能被讀取: ', runtimeConfig.safeName)
+// }
+// if (process.client) {
+//   console.log('2只有客戶端能被讀取: ', runtimeConfig.public.mizuName)
+// }
 
 
 function changeLayout(lauoytName) {

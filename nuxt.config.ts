@@ -63,13 +63,15 @@ export default defineNuxtConfig({
   // 環境變數
   runtimeConfig: {
     // 只能被 server 端讀取的環境變數
-    SUPER_SAFE_TEXT: '只有伺服器端才可讀取',
-
-
+    // superSafeText: '只有伺服器端才可讀取',
+    // safeName: '',
+    
+    
     // 可被 client, server 端讀取的環境變數
-    public: {
-      SUPER_TEXT: '客戶端、伺服器端皆可讀取'
-    }
+    // public: {
+    //   superText: '客戶端、伺服器端皆可讀取',
+    //   mizuName: '',
+    // }
   },
 
   // auto import 的資料夾
