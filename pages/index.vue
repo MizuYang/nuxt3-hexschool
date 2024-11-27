@@ -149,4 +149,9 @@ function changeLayout(lauoytName) {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+.active {
+  color: red;
+  background-color: #f8bfbf;
+}
 </style>
