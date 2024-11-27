@@ -72,6 +72,11 @@ function changeLayout(lauoytName) {
       <button type="button" @click="changeLayout('main-layout')">切換主要 layout</button>
     </div>
 
+    <!-- component.client -->
+    <ClientOnly>
+      <Box />
+    </ClientOnly>
+
 
     <!-- NuxtLink -->
     <div>
