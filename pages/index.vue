@@ -49,6 +49,13 @@ const { isLoading } = storeToRefs(loadingStore)
 // console.log(process.env.NUXT_SAFE_NAME)
 // console.log(process.env.NUXT_PUBLIC_MIZU_NAME)
 
+// if (import.meta.client) {
+//   console.log('只有客戶端讀取的到')
+// }
+// if (import.meta.server) {
+//   console.log('只有伺服器端讀取的到')
+// }
+
 
 function changeLayout(lauoytName) {
   setPageLayout(lauoytName)
