@@ -22,6 +22,20 @@ async function getFetchData() {
       // query: {},
       // params: {},
       // headers: {},
+
+      // 攔截器
+      onRequest(res) {
+        console.log('onRequest', res)
+      },
+      onRequestError(err) {
+        console.log('onRequestError', err)
+      },
+      onResponse(res) {
+        console.log('onResponse', res)
+      },
+      onResponseError(err) {
+        console.log('onResponseError', err)
+      }
     })
     return res
   } catch (err) {
