@@ -3,13 +3,16 @@ const route = useRoute();
 
 const name = decodeURIComponent(route.fullPath.split("-")[1]);
 
-// 匿名 middleware
-// definePageMeta({
-//   middleware: (to, from) => {
-//     console.log("middleware to: ", to);
-//     console.log("middleware from: ", from);
-//   }
-// })
+definePageMeta({
+  // 匿名 middleware
+  // middleware: (to, from) => {
+  //   console.log("匿名 middleware to: ", to);
+  //   console.log("匿名 middleware from: ", from);
+  // }
+  
+  // 具名 middleware
+  // middleware: ['check-auth']
+})
 
 // 1. useHead
 // useHead({
