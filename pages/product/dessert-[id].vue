@@ -3,6 +3,14 @@ const route = useRoute();
 
 const name = decodeURIComponent(route.fullPath.split("-")[1]);
 
+// 匿名 middleware
+// definePageMeta({
+//   middleware: (to, from) => {
+//     console.log("middleware to: ", to);
+//     console.log("middleware from: ", from);
+//   }
+// })
+
 // 1. useHead
 // useHead({
 //   // useHead 的所有屬性,可參考：https://nuxt.com/docs/api/composables/use-head#usehead
