@@ -4,6 +4,9 @@
 
 <template>
   <NuxtLink to="/" activeClass="active">最外層首頁</NuxtLink> |
+  <NuxtLink to="/user" activeClass="active">user</NuxtLink> |
+  <NuxtLink to="/user/A" activeClass="active">user/A</NuxtLink> |
+  <NuxtLink to="/user/B" activeClass="active">user/B</NuxtLink> |
   <NuxtLink to="/front" activeClass="active">front</NuxtLink> |
   <NuxtLink to="/front/xxx1" activeClass="active">front/xxx1/index</NuxtLink> |
   <NuxtLink to="/admin" activeClass="active">admin</NuxtLink> |
