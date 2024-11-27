@@ -9,9 +9,18 @@ definePageMeta({
   //   console.log("匿名 middleware to: ", to);
   //   console.log("匿名 middleware from: ", from);
   // }
-  
+
   // 具名 middleware
   // middleware: ['check-auth']
+
+  // 匿名+具名 middleware
+  // middleware: [
+  //   (to, from) => {
+  //     console.log("匿名 middleware to: ", to);
+  //     console.log("匿名 middleware from: ", from);
+  //   },
+  //   'check-auth'
+  // ]
 })
 
 // 1. useHead
