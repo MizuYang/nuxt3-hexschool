@@ -30,14 +30,30 @@ function sortRandomNumber() {
     </section>
 
     <section class="random-num-wrap">
-      <ul class="random-num-list">
-        <transition-group name="random-num">
+      <h2>使用 {{ '<transitionGrop>' }} 製作動畫</h2>
+        <ul class="random-num-list">
+          <transition-group name="random-num">
+            <template v-for="num in nums" :key="`transitiongrop-${num}`">
+              <li>
+                {{ num }}
+              </li>
+            </template>
+          </transition-group>
+      </ul>
+      <button type="button" @click="sortRandomNumber" class="me-2">
+        亂數排序
+      </button>
+      <button type="button" @click="getNumReset">重置</button>
+    </section>
+    
+    <section class="random-num-wrap mt-0">
+      <h2>使用 auto-animate 製作動畫</h2>
+        <ul class="random-num-list" v-auto-animate>
           <template v-for="num in nums" :key="`transitiongrop-${num}`">
             <li>
-              {{ num }}
-            </li>
-          </template>
-        </transition-group>
+            {{ num }}
+          </li>
+        </template>
       </ul>
       <button type="button" @click="sortRandomNumber" class="me-2">
         亂數排序
@@ -69,7 +85,7 @@ function sortRandomNumber() {
 }
 
 .random-num-wrap {
-  margin: 100px 0 100px 100px;
+  margin: 100px 0 30px 100px;
 }
 .random-num-list {
   list-style: none;

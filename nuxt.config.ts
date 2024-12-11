@@ -85,5 +85,5 @@ export default defineNuxtConfig({
     ]
   },
 
-  modules: ["@pinia/nuxt"]
+  modules: ["@pinia/nuxt", "@formkit/auto-animate/nuxt"]
 })
