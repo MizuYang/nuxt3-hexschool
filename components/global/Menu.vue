@@ -18,5 +18,9 @@
       >dessert-舒芙蕾</NuxtLink
     >
     |
+    <NuxtLink to="/transition" activeClass="active"
+      >transition</NuxtLink
+    >
+    |
   </span>
 </template>
