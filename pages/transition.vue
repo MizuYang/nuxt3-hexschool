@@ -43,6 +43,14 @@ async function sortGsapFlip() {
     scale: true,
   });
 }
+function sortAllHandler() {
+  sortRandomNumber();
+  sortGsapFlip();
+}
+function resetAllHandler () {
+  getNumReset();
+  resetGsapFlip();
+}
 async function resetGsapFlip() {
   const state = Flip.getState(".item");
   gsapNums.value = [];
@@ -63,19 +71,19 @@ async function rotate() {
     duration: 0.8,
     ease: "expo.inOut",
     spin: true,
-  }
-  
+  };
+
   // 執行排序、動畫
-  await gsapAnimateFn(items, '20px', options)
-  setTimeout(async () => await gsapAnimateFn(items, '100px', options), 1000);
-  setTimeout(async () => await gsapAnimateFn(items, '59.8px', options), 2000);
+  await gsapAnimateFn(items, "20px", options);
+  setTimeout(async () => await gsapAnimateFn(items, "100px", options), 1000);
+  setTimeout(async () => await gsapAnimateFn(items, "59.8px", options), 2000);
 }
 async function gsapAnimateFn(els, widthSize, options) {
   // 先記入改變前的狀態
   const state = Flip.getState(".item");
 
   // 改變元素的狀態 (修改順序就是改變元素的狀態)
-  changeWidth(els, widthSize)
+  changeWidth(els, widthSize);
 
   // 等到 DOM 元素重新 render 後，才能執行 GSAP 動畫
   await nextTick();
@@ -83,7 +91,7 @@ async function gsapAnimateFn(els, widthSize, options) {
   // GSAP 動畫、配置
   Flip.from(state, options);
 }
-function changeWidth (els, widthSize) {
+function changeWidth(els, widthSize) {
   els.forEach((item) => (item.style.width = widthSize));
 }
 </script>
@@ -110,10 +118,6 @@ function changeWidth (els, widthSize) {
           </template>
         </transition-group>
       </ul>
-      <button type="button" @click="sortRandomNumber" class="me-2">
-        亂數排序
-      </button>
-      <button type="button" @click="getNumReset">重置</button>
     </section>
 
     <section class="random-num-wrap mt-0">
@@ -125,10 +129,6 @@ function changeWidth (els, widthSize) {
           </li>
         </template>
       </ul>
-      <button type="button" @click="sortRandomNumber" class="me-2">
-        亂數排序
-      </button>
-      <button type="button" @click="getNumReset">重置</button>
     </section>
 
     <section class="random-num-wrap mt-0">
@@ -140,8 +140,8 @@ function changeWidth (els, widthSize) {
           </li>
         </template>
       </ul>
-      <button type="button" @click="sortGsapFlip" class="me-2">亂數排序</button>
-      <button type="button" @click="resetGsapFlip">重置</button>
+      <button type="button" @click="sortAllHandler" class="me-2">亂數排序</button>
+      <button type="button" @click="resetAllHandler" class="me-2">重置</button>
       <button type="button" @click="rotate">旋轉</button>
     </section>
   </div>
