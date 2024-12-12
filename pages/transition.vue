@@ -57,38 +57,34 @@ async function resetGsapFlip() {
   gsapState = []; // 初始化
 }
 async function rotate() {
-  const state = Flip.getState(".item");
   const items = [...document.querySelectorAll(".item")];
-  items.forEach((item) => (item.style.width = "20px"));
-  setTimeout(async () => {
-    const state = Flip.getState(".item");
-    items.forEach((item) => (item.style.width = "59px"));
-    await nextTick();
-    Flip.from(state, {
-      absolute: true,
-      duration: 0.8,
-      spin: true,
-    });
-  }, 2000);
-  setTimeout(async () => {
-    const state = Flip.getState(".item");
-    items.forEach((item) => (item.style.width = "100px"));
-    await nextTick();
-    Flip.from(state, {
-      absolute: true,
-      duration: 0.8,
-      spin: true,
-    });
-  }, 1000);
-  // if (gsapState?.targets?.length) {
-  await nextTick();
-  Flip.from(state, {
+  const options = {
     absolute: true,
     duration: 0.8,
     ease: "expo.inOut",
     spin: true,
-  });
-  // }
+  }
+  
+  // 執行排序、動畫
+  await gsapAnimateFn(items, '20px', options)
+  setTimeout(async () => await gsapAnimateFn(items, '100px', options), 1000);
+  setTimeout(async () => await gsapAnimateFn(items, '59.8px', options), 2000);
+}
+async function gsapAnimateFn(els, widthSize, options) {
+  // 先記入改變前的狀態
+  const state = Flip.getState(".item");
+
+  // 改變元素的狀態 (修改順序就是改變元素的狀態)
+  changeWidth(els, widthSize)
+
+  // 等到 DOM 元素重新 render 後，才能執行 GSAP 動畫
+  await nextTick();
+
+  // GSAP 動畫、配置
+  Flip.from(state, options);
+}
+function changeWidth (els, widthSize) {
+  els.forEach((item) => (item.style.width = widthSize));
 }
 </script>
 
